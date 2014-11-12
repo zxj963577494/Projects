@@ -1,0 +1,16 @@
+C:\Users\001.网\Documents\Visual Studio 2013\Projects\CLR Via C#\Castle.ActiveRecord\Model\bin\Debug\Model.dll
+C:\Users\001.网\Documents\Visual Studio 2013\Projects\CLR Via C#\Castle.ActiveRecord\Model\bin\Debug\Model.pdb
+C:\Users\001.网\Documents\Visual Studio 2013\Projects\CLR Via C#\Castle.ActiveRecord\Model\bin\Debug\Castle.ActiveRecord.dll
+C:\Users\001.网\Documents\Visual Studio 2013\Projects\CLR Via C#\Castle.ActiveRecord\Model\bin\Debug\NHibernate.dll
+C:\Users\001.网\Documents\Visual Studio 2013\Projects\CLR Via C#\Castle.ActiveRecord\Model\bin\Debug\NHibernate.ByteCode.Castle.dll
+C:\Users\001.网\Documents\Visual Studio 2013\Projects\CLR Via C#\Castle.ActiveRecord\Model\bin\Debug\Castle.Components.Validator.dll
+C:\Users\001.网\Documents\Visual Studio 2013\Projects\CLR Via C#\Castle.ActiveRecord\Model\bin\Debug\Castle.Core.dll
+C:\Users\001.网\Documents\Visual Studio 2013\Projects\CLR Via C#\Castle.ActiveRecord\Model\bin\Debug\Iesi.Collections.dll
+C:\Users\001.网\Documents\Visual Studio 2013\Projects\CLR Via C#\Castle.ActiveRecord\Model\bin\Debug\NHibernate.Search.dll
+C:\Users\001.网\Documents\Visual Studio 2013\Projects\CLR Via C#\Castle.ActiveRecord\Model\bin\Debug\Castle.ActiveRecord.pdb
+C:\Users\001.网\Documents\Visual Studio 2013\Projects\CLR Via C#\Castle.ActiveRecord\Model\bin\Debug\Castle.ActiveRecord.xml
+C:\Users\001.网\Documents\Visual Studio 2013\Projects\CLR Via C#\Castle.ActiveRecord\Model\bin\Debug\Castle.Components.Validator.xml
+C:\Users\001.网\Documents\Visual Studio 2013\Projects\CLR Via C#\Castle.ActiveRecord\Model\bin\Debug\Castle.Core.xml
+C:\Users\001.网\Documents\Visual Studio 2013\Projects\CLR Via C#\Castle.ActiveRecord\Model\obj\Debug\Model.dll
+C:\Users\001.网\Documents\Visual Studio 2013\Projects\CLR Via C#\Castle.ActiveRecord\Model\obj\Debug\Model.pdb
+C:\Users\001.网\Documents\Visual Studio 2013\Projects\CLR Via C#\Castle.ActiveRecord\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
