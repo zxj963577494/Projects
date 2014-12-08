@@ -45,6 +45,8 @@ namespace Weather
             this.navigationHelper = new NavigationHelper(this);
             this.navigationHelper.LoadState += this.NavigationHelper_LoadState;
             this.navigationHelper.SaveState += this.NavigationHelper_SaveState;
+
+           
         }
 
         /// <summary>
@@ -80,6 +82,9 @@ namespace Weather
             // TODO:  创建适用于问题域的合适数据模型以替换示例数据
             var sampleDataGroups = await SampleDataSource.GetGroupsAsync();
             this.DefaultViewModel["Groups"] = sampleDataGroups;
+
+            Model.WeatherTypeList weatherTypes = new Model.WeatherTypeList();
+            weatherTypes = await Common.JsonSerializeHelper.JsonDeSerializeForFile<Model.WeatherTypeList>("WeatherTypes.json", "Data");
         }
 
         /// <summary>

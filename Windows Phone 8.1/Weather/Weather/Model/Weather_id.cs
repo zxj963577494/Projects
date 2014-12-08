@@ -14,12 +14,12 @@ namespace Weather.Model
         /// <summary>
         /// 天气标识 [00：晴]
         /// </summary>
-        public WeatherTypes Fa { get; set; }
+        public WeatherType Fa { get; set; }
 
         /// <summary>
         /// 天气标识 [53：霾 如果fa不等于fb，说明是组合天气]
         /// </summary>
-        public WeatherTypes Fb { get; set; }
+        public WeatherType Fb { get; set; }
 
     }
 }

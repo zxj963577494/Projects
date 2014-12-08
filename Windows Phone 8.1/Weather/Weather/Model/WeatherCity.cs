@@ -9,7 +9,7 @@ namespace Weather.Model
     /// <summary>
     /// 支持城市
     /// </summary>
-    public class Cities
+    public class WeatherCity
     {
         /// <summary>
         /// ID

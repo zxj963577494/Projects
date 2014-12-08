@@ -9,7 +9,7 @@ namespace Weather.Model
     /// <summary>
     /// 天气种类
     /// </summary>
-    public class WeatherTypes
+    public class WeatherType
     {
         /// <summary>
         /// 天气唯一标识
