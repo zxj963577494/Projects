@@ -93,12 +93,7 @@ namespace Weather.Common
             try
             {
                 //获取本地文件夹，目录文件夹
-                IStorageFolder local = ApplicationData.Current.
-
-                foreach (var file in await local.GetFoldersAsync())
-                {
-                    
-                }
+                IStorageFolder local = ApplicationData.Current.LocalFolder;
 
                 IStorageFolder storageFolder = await local.GetFolderAsync(new Uri("ms-appdata:///local/")+fileFolder);
                 IStorageFile storageFile = await storageFolder.GetFileAsync(new Uri("ms-appdata:///local/")+fileName);
