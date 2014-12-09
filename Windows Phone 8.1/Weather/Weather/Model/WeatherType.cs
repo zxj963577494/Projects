@@ -20,5 +20,31 @@ namespace Weather.Model
         /// 天气
         /// </summary>
         public string Weather { get; set; }
+
+        /// <summary>
+        /// 今日白天天气图片
+        /// </summary>
+        public string TodayPic { get; set; }
+
+        /// <summary>
+        /// 今日黑夜天气图片
+        /// </summary>
+        public string TodayNightPic { get; set; }
+
+        /// <summary>
+        /// 未来白天天气图片
+        /// </summary>
+        public string TomorrowPic { get; set; }
+
+        /// <summary>
+        /// 未来黑夜天气图片
+        /// </summary>
+        public string TomorrowNightPic { get; set; }
+
+
+        /// <summary>
+        /// 背景图片
+        /// </summary>
+        public string BackgroundPic { get; set; }
     }
 }

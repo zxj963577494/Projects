@@ -12,6 +12,7 @@ namespace Weather.Common
 {
     public static class JsonSerializeHelper
     {
+        #region 通用序列化方法
         /// <summary>
         /// 序列化Json
         /// </summary>
@@ -50,8 +51,9 @@ namespace Weather.Common
                 return serializer.ReadObject(ms) as T;
             }
         }
+        #endregion
 
-
+        #region 文件化Json序列化/反序列化
 
         /// <summary>
         /// 文件化Json序列化
@@ -68,10 +70,10 @@ namespace Weather.Common
                 string jsonContent = JsonSerialize<T>(target);
                 //获取本地文件夹，目录文件夹
                 IStorageFolder local = Windows.Storage.ApplicationData.Current.LocalFolder;
-                //
-                IStorageFolder storageFolder = await local.GetFolderAsync(new Uri("ms-appdata:///local/") + fileFolder);
-                //
-                IStorageFile storageFile = await storageFolder.CreateFileAsync(new Uri("ms-appdata:///local/") + fileName, CreationCollisionOption.ReplaceExisting);
+                IStorageFolder storageFolder = await local.GetFolderAsync(fileFolder);
+                IStorageFile storageFile = await storageFolder.CreateFileAsync(fileName, CreationCollisionOption.ReplaceExisting);
+                //Uri uri = new Uri("ms-appx:///" + fileFolder + "/" + fileName + "");
+                //IStorageFile storageFile = await StorageFile.GetFileFromApplicationUriAsync(uri);
                 await FileIO.WriteTextAsync(storageFile, jsonContent);
             }
             catch (Exception ex)
@@ -92,16 +94,10 @@ namespace Weather.Common
         {
             try
             {
-                //获取本地文件夹，目录文件夹
-                IStorageFolder local = ApplicationData.Current.LocalFolder;
-
-                IStorageFolder storageFolder = await local.GetFolderAsync(new Uri("ms-appdata:///local/")+fileFolder);
-                IStorageFile storageFile = await storageFolder.GetFileAsync(new Uri("ms-appdata:///local/")+fileName);
-                IRandomAccessStream accessSream = await storageFile.OpenReadAsync();
-                using (StreamReader streaReader = new StreamReader(accessSream.AsStreamForRead((int)accessSream.Size)))
-                {
-                    return JsonDeserialize<T>(streaReader.ReadToEnd());
-                }
+                Uri uri = new Uri("ms-appx:///" + fileFolder + "/" + fileName + "");
+                IStorageFile storageFile = await StorageFile.GetFileFromApplicationUriAsync(uri);
+                string text = await FileIO.ReadTextAsync(storageFile);
+                return JsonDeserialize<T>(text);
             }
             catch (Exception ex)
             {
@@ -109,6 +105,52 @@ namespace Weather.Common
                 throw ex;
             }
 
+        } 
+        #endregion
+
+        #region Cities.json和WeatherTypes.json反序列化
+
+        /// <summary>
+        /// Cities.json反序列化
+        /// </summary>
+        /// <param name="type"></param>
+        /// <param name="filename"></param>
+        /// <returns></returns>
+        public static async Task<T> JsonDeSerializeForCities<T>() where T : class
+        {
+            try
+            {
+                IStorageFile storageFile = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///Data/Cities.txt"));
+                string text = await FileIO.ReadTextAsync(storageFile);
+                return JsonDeserialize<T>(text);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
+
+        /// <summary>
+        /// WeatherTypes.json反序列化
+        /// </summary>
+        /// <param name="type"></param>
+        /// <param name="filename"></param>
+        /// <returns></returns>
+        public static async Task<T> JsonDeSerializeForWeatherTypes<T>() where T : class
+        {
+            try
+            {
+                IStorageFile storageFile = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///Data/WeatherTypes.txt"));
+                string text = await FileIO.ReadTextAsync(storageFile);
+                return JsonDeserialize<T>(text);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+        #endregion
+
     }
 }

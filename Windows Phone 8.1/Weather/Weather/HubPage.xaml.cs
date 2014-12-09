@@ -84,7 +84,10 @@ namespace Weather
             this.DefaultViewModel["Groups"] = sampleDataGroups;
 
             Model.WeatherTypeList weatherTypes = new Model.WeatherTypeList();
-            weatherTypes = await Common.JsonSerializeHelper.JsonDeSerializeForFile<Model.WeatherTypeList>("WeatherTypes.json", "Data");
+            weatherTypes = await Common.JsonSerializeHelper.JsonDeSerializeForWeatherTypes<Model.WeatherTypeList>();
+
+            Model.WeatherCityList Cities = new Model.WeatherCityList();
+            Cities = await Common.JsonSerializeHelper.JsonDeSerializeForCities<Model.WeatherCityList>();
         }
 
         /// <summary>

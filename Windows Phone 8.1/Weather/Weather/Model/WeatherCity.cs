@@ -14,7 +14,7 @@ namespace Weather.Model
         /// <summary>
         /// ID
         /// </summary>
-        public int Id { get; set; }
+        public string Id { get; set; }
 
         /// <summary>
         /// 省份
@@ -29,6 +29,6 @@ namespace Weather.Model
         /// <summary>
         /// 区县
         /// </summary>
-        public int District { get; set; }
+        public string District { get; set; }
     }
 }
