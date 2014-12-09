@@ -17,7 +17,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
 
-// “中心应用程序”模板在 http://go.microsoft.com/fwlink/?LinkId=391641 上有介绍
+// “透视应用程序”模板在 http://go.microsoft.com/fwlink/?LinkID=391641 上有介绍
 
 namespace Weather
 {
@@ -104,7 +104,7 @@ namespace Weather
                 // 当导航堆栈尚未还原时，导航到第一页，
                 // 并通过将所需信息作为导航参数传入来配置
                 // 新页面。
-                if (!rootFrame.Navigate(typeof(HubPage), e.Arguments))
+                if (!rootFrame.Navigate(typeof(PivotPage), e.Arguments))
                 {
                     throw new Exception("Failed to create initial page");
                 }

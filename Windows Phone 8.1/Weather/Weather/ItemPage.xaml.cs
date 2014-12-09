@@ -17,7 +17,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-//“中心应用程序”模板在 http://go.microsoft.com/fwlink/?LinkID=391641 上有介绍
+// “透视应用程序”模板在 http://go.microsoft.com/fwlink/?LinkID=391641 上有介绍
 
 namespace Weather
 {
@@ -68,7 +68,7 @@ namespace Weather
         /// 字典。首次访问页面时，该状态将为 null。</param>
         private async void NavigationHelper_LoadState(object sender, LoadStateEventArgs e)
         {
-            // TODO: 创建适用于问题域的合适数据模型以替换示例数据
+            // TODO: 创建适用于问题域的合适数据模型以替换示例数据。
             var item = await SampleDataSource.GetItemAsync((string)e.NavigationParameter);
             this.DefaultViewModel["Item"] = item;
         }
@@ -92,10 +92,10 @@ namespace Weather
         /// 此部分中提供的方法只是用于使
         /// NavigationHelper 可响应页面的导航方法。
         /// <para>
-        /// 应将页面特有的逻辑放入
+        /// 应将页面特有的逻辑放入用于  
         /// <see cref="NavigationHelper.LoadState"/>
         /// 和 <see cref="NavigationHelper.SaveState"/> 的事件处理程序中。
-        /// 除了在早期会话期间保留的页面状态之外，
+        /// 除了在会话期间保留的页面状态之外 
         /// LoadState 方法中还提供导航参数。
         /// </para>
         /// </summary>

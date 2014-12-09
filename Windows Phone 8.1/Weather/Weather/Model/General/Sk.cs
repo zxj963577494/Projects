@@ -14,12 +14,12 @@ namespace Weather.Model
         /// <summary>
         /// 当前温度 [21]
         /// </summary>
-        public string Temp { get; set; }
+        public string temp { get; set; }
 
         /// <summary>
         /// 当前风向 [西风]
         /// </summary>
-        public string Wind_direction { get; set; }
+        public string wind_direction { get; set; }
 
         /// <summary>
         /// 当前风力 [2级]
@@ -29,11 +29,11 @@ namespace Weather.Model
         /// <summary>
         /// 当前湿度 [4%]
         /// </summary>
-        public string Humidity { get; set; }
+        public string humidity { get; set; }
 
         /// <summary>
         /// 更新时间 [14:25]
         /// </summary>
-        public string Time { get; set; }
+        public string time { get; set; }
     }
 }
