@@ -21,6 +21,6 @@ namespace Weather.Model
         /// <summary>
         /// 未来天气集合
         /// </summary>
-        public Future future { get; set; }
+        public List<Future> future { get; set; }
     }
 }

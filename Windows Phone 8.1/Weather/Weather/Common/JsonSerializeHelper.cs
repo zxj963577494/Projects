@@ -21,6 +21,7 @@ namespace Weather.Common
         /// <returns></returns>
         public static string JsonSerialize<T>(T target)
         {
+            
             DataContractJsonSerializer serializer = new DataContractJsonSerializer(target.GetType());
 
             using (MemoryStream stream = new MemoryStream())

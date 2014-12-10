@@ -77,8 +77,27 @@ namespace Weather
             var sampleDataGroup = await SampleDataSource.GetGroupAsync("Group-1");
             this.DefaultViewModel[FirstGroupName] = sampleDataGroup;
 
-            Message.General.GetWeatherRespose respose = new Message.General.GetWeatherRespose();
-            respose = await Common.JsonSerializeHelper.JsonDeSerializeForFile<Message.General.GetWeatherRespose>("20141209.txt", "Temp");
+
+           
+
+
+            //await Common.FileHelper.IsExistFile("Temp", "20141210.txt");
+            //Message.General.GetWeatherRespose respose = new Message.General.GetWeatherRespose();
+            //respose = await Common.JsonSerializeHelper.JsonDeSerializeForFile<Message.General.GetWeatherRespose>("20141210.txt", "Temp");
+
+            //Message.Forecast3h.GetForecast3hByCityNameRepose respose = new Message.Forecast3h.GetForecast3hByCityNameRepose();
+            //respose = await Common.JsonSerializeHelper.JsonDeSerializeForFile<Message.Forecast3h.GetForecast3hByCityNameRepose>("20141210050000.txt", "Temp");
+
+
+            //Message.General.GetWeatherRespose respose = new Message.General.GetWeatherRespose();
+            //string cityname = "杭州";
+            //Message.General.GetWeatherByCityNameOrIdRequest request = new Message.General.GetWeatherByCityNameOrIdRequest(cityname);
+            //string requestUrl = request.GetRequestUrl();
+            //string resposeString = await Common.HttpHelper.GetUrlRespose(requestUrl);
+            //respose = Common.JsonSerializeHelper.JsonDeserialize<Message.General.GetWeatherRespose>(resposeString);
+
+            //await FileHelper.CreateFileForFolder("Temp", DateTime.Now.ToString("yyyyMMdd"), resposeString);
+
         }
 
         /// <summary>
@@ -167,5 +186,8 @@ namespace Weather
         }
 
         #endregion
+
+
+
     }
 }

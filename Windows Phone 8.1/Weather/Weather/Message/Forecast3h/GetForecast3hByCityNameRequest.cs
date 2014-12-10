@@ -69,7 +69,7 @@ namespace Weather.Message.Forecast3h
         /// <returns></returns>
         public string GetRequestUrl()
         {
-            string url = "http://v.juhe.cn/weather/forecast3h.php?dtype=json&cityname=" + Common.UrlHelper.GetUrlString(cityname) + "&key=" + key;
+            string url = "http://v.juhe.cn/weather/forecast3h.php?dtype=json&cityname=" + Common.StringHelper.GetUrlString(cityname) + "&key=" + key;
             return url;
         } 
         #endregion
