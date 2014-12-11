@@ -1,4 +1,4 @@
-﻿using Weather.Utils;
+﻿using Weather.App.Common;
 using Weather.Data;
 using System;
 using System.Collections.Generic;
@@ -21,7 +21,7 @@ using Windows.UI.Xaml.Navigation;
 
 // “透视应用程序”模板在 http://go.microsoft.com/fwlink/?LinkID=391641 上有介绍
 
-namespace Weather
+namespace Weather.App
 {
     public sealed partial class PivotPage : Page
     {
@@ -78,8 +78,8 @@ namespace Weather
             this.DefaultViewModel[FirstGroupName] = sampleDataGroup;
 
 
-            BackgroundTask.BackgroundTaskExecute execute = new BackgroundTask.BackgroundTaskExecute();
-            execute.RegisterBackgroundTask();
+            //BackgroundTask.BackgroundTaskExecute execute = new BackgroundTask.BackgroundTaskExecute();
+            //execute.RegisterBackgroundTask();
 
 
 

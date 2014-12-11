@@ -7,8 +7,8 @@
     <ProjectGuid>{A2871DC2-74B3-48F7-BC23-DE4BED06F766}</ProjectGuid>
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Weather</RootNamespace>
-    <AssemblyName>Weather</AssemblyName>
+    <RootNamespace>Weather.App</RootNamespace>
+    <AssemblyName>Weather.App</AssemblyName>
     <DefaultLanguage>zh-CN</DefaultLanguage>
     <TargetPlatformVersion>8.1</TargetPlatformVersion>
     <MinimumVisualStudioVersion>12</MinimumVisualStudioVersion>
@@ -95,24 +95,6 @@
     <Compile Include="ItemPage.xaml.cs">
       <DependentUpon>ItemPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Message\Forecast3h\GetForecast3hByCityNameRepose.cs" />
-    <Compile Include="Message\Forecast3h\GetForecast3hByCityNameRequest.cs" />
-    <Compile Include="Message\General\GetWeatherByIpRequest.cs" />
-    <Compile Include="Message\General\GetWeatherByGpsRequest.cs" />
-    <Compile Include="Message\General\GetWeatherByCityNameOrIdRequest.cs" />
-    <Compile Include="Message\General\GetWeatherRespose.cs" />
-    <Compile Include="Model\Forecast3h\Forecast3hList.cs" />
-    <Compile Include="Model\CientData\WeatherCityList.cs" />
-    <Compile Include="Model\CientData\WeatherCity.cs" />
-    <Compile Include="Model\Forecast3h\Forecast3h.cs" />
-    <Compile Include="Model\General\Future.cs" />
-    <Compile Include="Model\General\Sk.cs" />
-    <Compile Include="Model\General\Today.cs" />
-    <Compile Include="Model\CientData\WeatherType.cs" />
-    <Compile Include="Model\CientData\WeatherTypeList.cs" />
-    <Compile Include="Model\General\Weather.cs" />
-    <Compile Include="Model\General\WeatherId.cs" />
-    <Compile Include="Model\User\User.cs" />
     <Compile Include="PivotPage.xaml.cs">
       <DependentUpon>PivotPage.xaml</DependentUpon>
     </Compile>
@@ -247,15 +229,24 @@
     <Content Include="Data\WeatherTypes.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Common\Utils.csproj">
+    <ProjectReference Include="..\Common\Weather.Utils.csproj">
       <Project>{5351dd4f-5218-4e3d-99fc-fcd485696da9}</Project>
-      <Name>Utils</Name>
+      <Name>Weather.Utils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Weather.Model.csproj">
+      <Project>{4fd61305-5be3-4bb1-8487-cb8fc6216f03}</Project>
+      <Name>Weather.Model</Name>
     </ProjectReference>
     <ProjectReference Include="..\NotificationsExtensions\NotificationsExtensions.csproj">
       <Project>{5c6beb72-588f-4c4b-a230-6cf60c0baca1}</Project>
       <Name>NotificationsExtensions</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Service\Weather.Service.csproj">
+      <Project>{c8ca90e8-3721-4b4f-b406-8a44841b79fc}</Project>
+      <Name>Weather.Service</Name>
+    </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">
     <VisualStudioVersion>12.0</VisualStudioVersion>
   </PropertyGroup>

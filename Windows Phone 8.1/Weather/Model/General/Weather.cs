@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Weather.Model
 {
-    public class WeatherResult
+    public class Weather
     {
         /// <summary>
         /// 当前实况天气

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Weather.Message.Forecast3h
+namespace Weather.Service.Message.Forecast3h
 {
     /// <summary>
     /// 根据城市名获取城市天气三小时预报响应类

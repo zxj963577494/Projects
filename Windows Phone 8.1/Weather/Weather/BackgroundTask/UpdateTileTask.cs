@@ -14,7 +14,7 @@ using Windows.Foundation;
 using Windows.UI.Notifications;
 using Windows.Web.Syndication;
 
-namespace Weather.BackgroundTask
+namespace Weather.App.BackgroundTask
 {
     public sealed class UpdateTileTask : IBackgroundTask
     {

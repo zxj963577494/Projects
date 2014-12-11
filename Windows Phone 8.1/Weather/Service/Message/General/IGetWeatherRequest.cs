@@ -4,13 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Weather.App.ViewModel
+namespace Weather.Service.Message.General
 {
-    /// <summary>
-    /// 首页视图模型
-    /// </summary>
-    public class HomePageModel
+    interface IGetWeatherRequest
     {
-
     }
 }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Weather.DTO
+namespace Weather.App.DTO
 {
     /// <summary>
     /// 磁铁内容更新传输类

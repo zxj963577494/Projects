@@ -4,13 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Weather.App.ViewModel
+namespace Weather.Service.Message.General
 {
     /// <summary>
-    /// 首页视图模型
+    /// 获取天气的方式
     /// </summary>
-    public class HomePageModel
+    public enum GetWeatherMode
     {
-
+        City=1,
+        Gps=2,
+        Ip=3
     }
 }

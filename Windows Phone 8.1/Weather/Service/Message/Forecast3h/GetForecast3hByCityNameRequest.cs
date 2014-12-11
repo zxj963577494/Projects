@@ -4,45 +4,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Weather.Message.General
+namespace Weather.Service.Message.Forecast3h
 {
     /// <summary>
-    /// 根据GPS获取天气
+    /// 根据城市名获取城市天气三小时预报请求类
     /// </summary>
-    public class GetWeatherByGpsRequest
+    public class GetForecast3hByCityNameRequest
     {
 
         #region Field
-        private string _format = "1";
-
         private string _dtype = "json";
 
         private string _key = "fbaccffcb1100c884418266f011bf55e";
 
         /// <summary>
-        /// 经度
+        /// 城市名称
         /// </summary>
-        public string lon { get; set; }
-
-        /// <summary>
-        /// 纬度
-        /// </summary>
-        public string lat { get; set; }
-
-        /// <summary>
-        /// 未来6天预报(future)两种返回格式，1或2，默认1
-        /// </summary>
-        public string format
-        {
-            get
-            {
-                return _format;
-            }
-            set
-            {
-                _format = value;
-            }
-        }
+        public string cityname { get; set; }
 
         /// <summary>
         /// 返回数据格式：json或xml,默认json
@@ -72,15 +50,17 @@ namespace Weather.Message.General
             {
                 _key = value;
             }
-        }
+        } 
         #endregion
 
         #region Method
-
-        public GetWeatherByGpsRequest(string lon, string lat)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="cityname">城市名称</param>
+        public GetForecast3hByCityNameRequest(string cityname)
         {
-            this.lon = lon;
-            this.lat = lat;
+            this.cityname = cityname;
         }
 
         /// <summary>
@@ -89,7 +69,7 @@ namespace Weather.Message.General
         /// <returns></returns>
         public string GetRequestUrl()
         {
-            string url = "http://v.juhe.cn/weather/geo?dtype=json&format=" + format + "&lon=" + lon + "&lat" + lat + "&key=" + key;
+            string url = "http://v.juhe.cn/weather/forecast3h.php?dtype=json&cityname=" + Utils.StringHelper.GetUrlString(cityname) + "&key=" + key;
             return url;
         } 
         #endregion

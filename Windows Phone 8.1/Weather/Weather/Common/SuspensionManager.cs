@@ -11,7 +11,7 @@ using Windows.Storage.Streams;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 
-namespace Weather.Utils
+namespace Weather.App.Common
 {
     /// <summary>
     /// SuspensionManager 捕获全局会话状态以简化应用程序的

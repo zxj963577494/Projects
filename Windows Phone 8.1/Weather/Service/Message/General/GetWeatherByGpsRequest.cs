@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Weather.Service.Message.General;
 
-namespace Weather.Message.General
+namespace Weather.Service.Message.General
 {
     /// <summary>
-    /// 根据IP获取天气
+    /// 根据GPS获取天气
     /// </summary>
-    public class GetWeatherByCityIdRequest
+    public class GetWeatherByGpsRequest : IGetWeatherRequest
     {
 
         #region Field
@@ -20,9 +21,14 @@ namespace Weather.Message.General
         private string _key = "fbaccffcb1100c884418266f011bf55e";
 
         /// <summary>
-        /// ip地址
+        /// 经度
         /// </summary>
-        public string ip { get; set; }
+        public string lon { get; set; }
+
+        /// <summary>
+        /// 纬度
+        /// </summary>
+        public string lat { get; set; }
 
         /// <summary>
         /// 未来6天预报(future)两种返回格式，1或2，默认1
@@ -67,14 +73,21 @@ namespace Weather.Message.General
             {
                 _key = value;
             }
-        } 
+        }
         #endregion
 
         #region Method
 
-        public GetWeatherByCityIdRequest(string ip)
+
+        public GetWeatherByGpsRequest()
         {
-            this.ip = ip;
+
+        }
+
+        public GetWeatherByGpsRequest(string lon, string lat)
+        {
+            this.lon = lon;
+            this.lat = lat;
         }
 
         /// <summary>
@@ -83,9 +96,9 @@ namespace Weather.Message.General
         /// <returns></returns>
         public string GetRequestUrl()
         {
-            string url = "http://v.juhe.cn/weather/ip?dtype=json&format=" + format + "&ip=" + ip + "&key=" + key;
+            string url = "http://v.juhe.cn/weather/geo?dtype=json&format=" + format + "&lon=" + lon + "&lat" + lat + "&key=" + key;
             return url;
-        }  
+        } 
         #endregion
     }
 }

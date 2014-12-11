@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Windows.UI.Notifications;
 
-namespace Weather.Common
+namespace Weather.App.Common
 {
     public class TileHelper : Utils.TileHelper
     {

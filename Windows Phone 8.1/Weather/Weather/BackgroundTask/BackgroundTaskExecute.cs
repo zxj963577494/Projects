@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Windows.ApplicationModel.Background;
 using Windows.UI.Core;
 
-namespace Weather.BackgroundTask
+namespace Weather.App.BackgroundTask
 {
     /// <summary>
     /// 后台
@@ -15,45 +15,65 @@ namespace Weather.BackgroundTask
     {
         public const string BackgroundTaskEntryPoint = "Weather.BackgroundTask.UpdateTileTask";
         public const string BackgroundTaskName = "ZXJUpdateForTile";
+        public bool taskRegistered = false;
         public static string BackgroundTaskProgress = "";
         public static bool BackgroundTaskRegistered = false;
 
-
-        public void Execute()
+        /// <summary>
+        /// 检测后台任务是否已存在
+        /// </summary>
+        public void Vlidate()
         {
-            foreach (var task in BackgroundTaskRegistration.AllTasks)
-            {
-                if (task.Value.Name == BackgroundTaskName)
-                {
-                    AttachProgressAndCompletedHandlers(task.Value);
-                    break;
-                }
-            }
+            taskRegistered = BackgroundTaskRegistration.AllTasks.Any(x => x.Value.Name == BackgroundTaskName);
         }
 
+        public BackgroundTaskExecute()
+        {
+            Vlidate();
+        }
+
+
+        /// <summary>
+        /// 执行后台任务
+        /// </summary>
+        //public void Execute()
+        //{
+        //    if (taskRegistered)
+        //    {
+        //        AttachProgressAndCompletedHandlers(task.Value);
+        //    }
+        //}
+
+
+        /// <summary>
+        /// 创建后台任务
+        /// </summary>
         public async void RegisterBackgroundTask()
         {
-            var backgroundAccessStatus = await BackgroundExecutionManager.RequestAccessAsync();
-            if (backgroundAccessStatus == BackgroundAccessStatus.AllowedMayUseActiveRealTimeConnectivity ||
-                backgroundAccessStatus == BackgroundAccessStatus.AllowedWithAlwaysOnRealTimeConnectivity)
+            if (!taskRegistered)
             {
-                try
+                var backgroundAccessStatus = await BackgroundExecutionManager.RequestAccessAsync();
+                if (backgroundAccessStatus == BackgroundAccessStatus.AllowedMayUseActiveRealTimeConnectivity ||
+                    backgroundAccessStatus == BackgroundAccessStatus.AllowedWithAlwaysOnRealTimeConnectivity)
                 {
-                    IBackgroundTrigger backgroundTrigger = new TimeTrigger(15, false);
-                    var task = BackgroundTaskHelper.RegisterBackgroundTask(BackgroundTaskEntryPoint,
-                                                                       BackgroundTaskName,
-                                                                       backgroundTrigger,
-                                                                       null);
-                    await task;
-                    AttachProgressAndCompletedHandlers(task.Result);
+                    try
+                    {
+                        IBackgroundTrigger backgroundTrigger = new TimeTrigger(15, false);
+                        var task = BackgroundTaskHelper.RegisterBackgroundTask(BackgroundTaskEntryPoint,
+                                                                           BackgroundTaskName,
+                                                                           backgroundTrigger,
+                                                                           null);
+                        await task;
+                        AttachProgressAndCompletedHandlers(task.Result);
+                    }
+                    catch (Exception)
+                    {
+
+                        throw;
+                    }
+
+                    //UpdateUI();
                 }
-                catch (Exception)
-                {
-                    
-                    throw;
-                }
-               
-                //UpdateUI();
             }
         }
 

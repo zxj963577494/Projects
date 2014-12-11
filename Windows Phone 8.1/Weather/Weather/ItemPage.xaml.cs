@@ -1,4 +1,4 @@
-﻿using Weather.Utils;
+﻿using Weather.App.Common;
 using Weather.Data;
 using System;
 using System.Collections.Generic;
@@ -19,7 +19,7 @@ using Windows.UI.Xaml.Navigation;
 
 // “透视应用程序”模板在 http://go.microsoft.com/fwlink/?LinkID=391641 上有介绍
 
-namespace Weather
+namespace Weather.App
 {
     /// <summary>
     /// 显示组内某一项的详细信息的页面。

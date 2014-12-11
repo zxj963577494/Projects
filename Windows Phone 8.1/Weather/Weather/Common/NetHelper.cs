@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Weather.Utils
+namespace Weather.App.Common
 {
     /// <summary>
     /// 网络相关

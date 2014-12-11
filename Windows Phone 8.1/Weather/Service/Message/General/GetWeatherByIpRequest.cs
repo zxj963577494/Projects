@@ -3,20 +3,27 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Weather.Service.Message.General;
 
-namespace Weather.Message.General
+namespace Weather.Service.Message.General
 {
     /// <summary>
-    /// 根据城市名称或城市Id获取天气
+    /// 根据IP获取天气
     /// </summary>
-    public class GetWeatherByCityNameOrIdRequest
+    public class GetWeatherByIpRequest : IGetWeatherRequest
     {
+
         #region Field
         private string _format = "1";
 
         private string _dtype = "json";
 
         private string _key = "fbaccffcb1100c884418266f011bf55e";
+
+        /// <summary>
+        /// ip地址
+        /// </summary>
+        public string ip { get; set; }
 
         /// <summary>
         /// 未来6天预报(future)两种返回格式，1或2，默认1
@@ -49,11 +56,6 @@ namespace Weather.Message.General
         }
 
         /// <summary>
-        /// 城市名或城市ID
-        /// </summary>
-        public string cityname { get; set; }
-
-        /// <summary>
         /// key
         /// </summary>
         public string key
@@ -66,18 +68,19 @@ namespace Weather.Message.General
             {
                 _key = value;
             }
-        }
+        } 
         #endregion
 
         #region Method
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="cityname">城市名称</param>
-        public GetWeatherByCityNameOrIdRequest(string cityname)
+        public GetWeatherByIpRequest()
         {
-            this.cityname = cityname;
+
+        }
+
+        public GetWeatherByIpRequest(string ip)
+        {
+            this.ip = ip;
         }
 
         /// <summary>
@@ -86,9 +89,9 @@ namespace Weather.Message.General
         /// <returns></returns>
         public string GetRequestUrl()
         {
-            string url = "http://v.juhe.cn/weather/index?dtype=json&format=" + format + "&cityname=" + Utils.StringHelper.GetUrlString(cityname) + "&key=" + key;
+            string url = "http://v.juhe.cn/weather/ip?dtype=json&format=" + format + "&ip=" + ip + "&key=" + key;
             return url;
-        }
+        }  
         #endregion
     }
 }

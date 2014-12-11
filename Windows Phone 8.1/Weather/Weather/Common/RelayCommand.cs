@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace Weather.Utils
+namespace Weather.App.Common
 {
     /// <summary>
     /// 专门用于中继自身功能的命令

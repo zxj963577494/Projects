@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Windows.ApplicationModel.Background;
 
-namespace Weather.BackgroundTask
+namespace Weather.App.BackgroundTask
 {
     /// <summary>
     /// 后台任务
