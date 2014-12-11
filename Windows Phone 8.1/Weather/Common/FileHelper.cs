@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Windows.Storage;
 
-namespace Weather.Common
+namespace Weather.Utils
 {
     /// <summary>
     /// 文件操作类

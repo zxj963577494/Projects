@@ -86,7 +86,7 @@ namespace Weather.Message.General
         /// <returns></returns>
         public string GetRequestUrl()
         {
-            string url = "http://v.juhe.cn/weather/index?dtype=json&format=" + format + "&cityname=" + Common.StringHelper.GetUrlString(cityname) + "&key=" + key;
+            string url = "http://v.juhe.cn/weather/index?dtype=json&format=" + format + "&cityname=" + Utils.StringHelper.GetUrlString(cityname) + "&key=" + key;
             return url;
         }
         #endregion

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using Windows.Storage;
 using Windows.Storage.Streams;
 
-namespace Weather.Common
+namespace Weather.Utils
 {
     public static class JsonSerializeHelper
     {

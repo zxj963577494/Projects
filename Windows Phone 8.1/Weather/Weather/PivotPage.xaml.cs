@@ -1,4 +1,4 @@
-﻿using Weather.Common;
+﻿using Weather.Utils;
 using Weather.Data;
 using System;
 using System.Collections.Generic;
@@ -78,7 +78,28 @@ namespace Weather
             this.DefaultViewModel[FirstGroupName] = sampleDataGroup;
 
 
-           
+            BackgroundTask.BackgroundTaskExecute execute = new BackgroundTask.BackgroundTaskExecute();
+            execute.RegisterBackgroundTask();
+
+
+
+
+            /* 通知
+            string toastText = "明天冷空气南下，请注意保暖";
+            Common.ToastHelper.CreateToast(toastText);
+            */
+
+            //磁贴通知
+            //DTO.TileModel tileModel = new DTO.TileModel();
+            //tileModel.ImagerSrc = "ms-appx:///Assets/Logo.scale-100.png";
+            //tileModel.TextHeading = "气温 17";
+            //tileModel.TextBody1 = "风向 东北风";
+            //tileModel.TextBody2 = "风力 2级";
+            //tileModel.TextBody3 = "湿度 4%";
+            //Common.TileHelper.UpdateTileNotifications(tileModel);
+            //Common.TileHelper.UpdateBadgeWithNumber(10);
+            
+
 
 
             //await Common.FileHelper.IsExistFile("Temp", "20141210.txt");

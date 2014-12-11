@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Windows.Devices.Geolocation;
 using Windows.UI.Popups;
 
-namespace Weather.Common
+namespace Weather.Utils
 {
     /// <summary>
     /// 位置
